@@ -1,34 +1,134 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
 }
-body{
-    background-color:black;
+
+body {
+    background-color: black;
     color: white;
 }
 
-.nav{
+.nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 6px;
+}
 
+.nav-left,
+.nav-center,
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-center {
+    flex: 1;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+
+}
+.home:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.search{
+    height: 6vh;
+    width: 30vw;
+    border-radius: 40px;
+    background-color: #202020;
+    border: none;
+    padding-left: 25px; /* move placeholder text to the right */
+    color: white;
+}
+.search input::placeholder {
+    color: gray;
+    font-size: 25px;
+    
+  }
+.search:hover{
+    background-color: #363535;
 }
 
 .logo {
     height: 6vh;
+    margin-left: 10px;
+
 }
-.home{
+
+.home {
     height: 6vh;
 }
 
-.container{
+.nav-right{
+    margin-right: 10px
+}
+.signup{
+    cursor: pointer;
+    color: #b3b3b3;
+    font-size: 14px;
+}
+.signup:hover{
+    transform: scale(1.04);
+    color: rgb(205, 196, 196);
+}
+.login{
+    cursor: pointer;
+    color: black;
+    font-size: 14px;
+    font-weight: 1000;
+}
+.login:hover{
+    transform: scale(1.04);
+}
+.nav-right button{
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 15px;
+}
+
+.container {
     display: flex;
-    gap: 10px;
+    padding-left: 6px;
+    padding-right: 6px;
+    gap: 6px;
 }
 
-.block1{
-    background-color: #323232;
-    width: 30vw;
+.left-block {
+    background-color: #202020;
+    width: 25vw;
+    border-radius: 10px;
 }
 
-.block2{
-    background-color: #323232;
-    width: 70vw;
+.right-block {
+    background-color: #202020;
+    width: 75vw;
+    border-radius: 10px;
+}
+
+.first-line,
+.second-line,
+.third-line,
+.four-line {
+    display: flex;
+
+}
+
+.first-line img,
+.second-line img,
+.third-line img,
+.four-line img {
+    width: 10vw;
+
+}
+
+.second-line img {
+    border-radius: 100%;
+    width: 10vw;
+}
+
+.bl2-foot {
+    display: flex;
 }
