@@ -1,0 +1,34 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color:black;
+    color: white;
+}
+
+.nav{
+
+}
+
+.logo {
+    height: 6vh;
+}
+.home{
+    height: 6vh;
+}
+
+.container{
+    display: flex;
+    gap: 10px;
+}
+
+.block1{
+    background-color: #323232;
+    width: 30vw;
+}
+
+.block2{
+    background-color: #323232;
+    width: 70vw;
+}
