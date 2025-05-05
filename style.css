@@ -1,7 +1,4 @@
-* {
-    margin: 0px;
-    padding: 0px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 html,
 body {
@@ -19,6 +16,11 @@ body {
     justify-content: space-around;
     align-items: center;
     padding: 6px;
+
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
 }
 
 .nav-left,
@@ -65,7 +67,7 @@ body {
 
 .logo {
     height: 5.5vh;
-    margin-left: 10px;
+    margin-left: 20px;
 
 }
 
@@ -94,8 +96,9 @@ body {
     font-size: 14px;
     font-weight: 1000;
 }
-.nav-right button{
-border-style: none;
+
+.nav-right button {
+    border-style: none;
 }
 
 .login:hover {
@@ -116,6 +119,11 @@ border-style: none;
     padding-left: 8px;
     padding-right: 8px;
     gap: 8px;
+
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
 }
 
 /* in container left Block Start */
@@ -152,10 +160,16 @@ border-style: none;
 
 .bl1-top button {
     color: #989898;
-    width: 0px;
     font-size: 28px;
+    border-radius: 50px;
+    margin-right: 10px;
+
+    background-color: #121212;
     border-style: none;
-    margin-right: 30px;
+}
+.add-btn:hover{
+    background-color: #1f1f1f;
+    cursor: pointer;
 }
 
 .bl1-box1 {
@@ -164,8 +178,6 @@ border-style: none;
     border-radius: 10px;
     margin: 10px 10px;
 }
-
-.bl1-box1 h4 {}
 
 .bl1-box1 h5 {
     padding: 13px 0px;
@@ -234,13 +246,16 @@ border-style: none;
     background-color: #121212;
     width: 70vw;
     border-radius: 10px;
-    height: 100vh;
+    max-height: 100vh;
+    box-sizing: border-box;
     overflow-y: auto;
     /* Only right side scrolls */
+    
 }
-.bl2-top{
-margin-top: 20px;
-margin-left: 50px;
+
+.bl2-top {
+    margin-top: 20px;
+    margin-left: 50px;
 }
 
 .first-line,
@@ -251,22 +266,24 @@ margin-left: 50px;
     margin: 20px 40px;
 }
 
-.card{
-    
+.card {
+
     padding-bottom: 40px;
     padding-left: 18px;
-    padding-top: 10px;
+    padding-top: 20px;
     border-radius: 20px;
-    
+
 }
-.card img{
+
+.card img {
     border-radius: 10px;
-    
+
 }
-.card:hover{
+
+.card:hover {
     cursor: pointer;
     background-color: #1f1f1f;
-    
+
 }
 
 .first-line img,
@@ -274,7 +291,16 @@ margin-left: 50px;
 .third-line img,
 .four-line img {
     width: 10vw;
-    
+}
+
+.artist h4 {
+    margin-left: 40px;
+    padding-bottom: 5px;
+}
+
+.artist h6 {
+    margin-left: 40px;
+    padding-bottom: 5px;
 }
 
 .second-line img {
@@ -283,6 +309,41 @@ margin-left: 50px;
     margin: 20px 40px;
 }
 
+.artist {
+    border-radius: 10px;
+}
+
+.artist:hover {
+    cursor: pointer;
+    background-color: #1f1f1f;
+
+}
+
 .bl2-foot {
     display: flex;
+    justify-content: left;
+    margin-left: 20px;
+    
+}
+.row li{
+    list-style: none;
+    padding: 10px;
+}
+
+.social{
+    padding-top: 25px;
+    padding-left: 100px;
+}
+.social img{
+    width: 3vw;
+    padding: 10px;
+}
+
+
+
+.copyright{
+    padding-bottom: 150px;
+    padding-top: 0px;
+    padding-left: 50px;
+
 }
