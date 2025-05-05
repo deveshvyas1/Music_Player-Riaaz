@@ -8,6 +8,10 @@ body {
     overflow: hidden;
     background-color: #000000;
     color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
 }
 
 
@@ -262,21 +266,40 @@ body {
 .second-line,
 .third-line,
 .four-line {
-    display: flex;
-    margin: 20px 40px;
+    /* display: flex; */
+    /* margin: 20px 40px; */
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 equal columns */
+    /* gap: 20px; */
+    /* margin: 20px 40px; */
 }
 
 .card {
-
+/* 
     padding-bottom: 40px;
-    padding-left: 18px;
-    padding-top: 20px;
+    /* padding-left: 10px; */
+    /* padding-top: 20px; */
     border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
 
 }
 
 .card img {
     border-radius: 10px;
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    display: block;
+    margin-top: 10px;
+    padding-left: 10px;
+}
+.card h4,h6{
+    padding-left: 10px;
+    margin-top: 10px;
+}
+.card h6{
 
 }
 
@@ -290,17 +313,17 @@ body {
 .second-line img,
 .third-line img,
 .four-line img {
-    width: 10vw;
+    /* width: 10vw; */
 }
 
 .artist h4 {
     margin-left: 40px;
-    padding-bottom: 5px;
+    /* padding-bottom: 5px; */
 }
 
 .artist h6 {
     margin-left: 40px;
-    padding-bottom: 5px;
+    /* padding-bottom: 5px; */
 }
 
 .second-line img {
@@ -344,6 +367,6 @@ body {
 .copyright{
     padding-bottom: 150px;
     padding-top: 0px;
-    padding-left: 50px;
+    padding-left: 0px;
 
 }
