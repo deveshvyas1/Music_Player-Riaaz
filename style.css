@@ -3,10 +3,16 @@
     padding: 0px;
 }
 
+html,
 body {
-    background-color: black;
-    color: white;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background-color: #000000;
+    color: #ffffff;
 }
+
 
 .nav {
     display: flex;
@@ -20,7 +26,7 @@ body {
 .nav-right {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
 }
 
 .nav-center {
@@ -30,82 +36,211 @@ body {
     align-items: center;
 
 }
-.home:hover{
+
+.home:hover {
     transform: scale(1.05);
     cursor: pointer;
 }
-.search{
-    height: 6vh;
+
+.search {
+    height: 5.5vh;
     width: 30vw;
     border-radius: 40px;
     background-color: #202020;
     border: none;
-    padding-left: 25px; /* move placeholder text to the right */
+    padding-left: 25px;
+    /* move placeholder text to the right */
     color: white;
 }
+
 .search input::placeholder {
     color: gray;
     font-size: 25px;
-    
-  }
-.search:hover{
+
+}
+
+.search:hover {
     background-color: #363535;
 }
 
 .logo {
-    height: 6vh;
+    height: 5.5vh;
     margin-left: 10px;
 
 }
 
 .home {
-    height: 6vh;
+    height: 5.5vh;
 }
 
-.nav-right{
+.nav-right {
     margin-right: 10px
 }
-.signup{
+
+.signup {
     cursor: pointer;
     color: #b3b3b3;
     font-size: 14px;
 }
-.signup:hover{
+
+.signup:hover {
     transform: scale(1.04);
     color: rgb(205, 196, 196);
 }
-.login{
+
+.login {
     cursor: pointer;
     color: black;
     font-size: 14px;
     font-weight: 1000;
 }
-.login:hover{
+.nav-right button{
+border-style: none;
+}
+
+.login:hover {
     transform: scale(1.04);
 }
-.nav-right button{
+
+.nav-right button {
     padding: 15px 30px;
     border-radius: 30px;
     font-size: 15px;
 }
 
+
+/* Container Start */
 .container {
     display: flex;
-    padding-left: 6px;
-    padding-right: 6px;
-    gap: 6px;
+    height: 100vh;
+    padding-left: 8px;
+    padding-right: 8px;
+    gap: 8px;
 }
+
+/* in container left Block Start */
 
 .left-block {
-    background-color: #202020;
-    width: 25vw;
+    background-color: #121212;
+    width: 30vw;
+    height: 100vh;
     border-radius: 10px;
+    overflow: hidden;
+    /* No scroll */
+    position: sticky;
+    /* optional, to stick while scrolling */
+    top: 0;
+    display: flex;
+    /* Optional: manage internal layout */
+    flex-direction: column;
 }
 
-.right-block {
-    background-color: #202020;
-    width: 75vw;
+.bl1-top {
+    display: flex;
+    justify-content: space-between;
+    /* pushes items to left and right */
+    align-items: center;
+    /* centers vertically */
+    height: 80px;
+    /* or any height */
+    padding: 0 20px;
+}
+
+.bl1-top h4 {
+    font-size: 15px;
+}
+
+.bl1-top button {
+    color: #989898;
+    width: 0px;
+    font-size: 28px;
+    border-style: none;
+    margin-right: 30px;
+}
+
+.bl1-box1 {
+    background-color: #1f1f1f;
+    padding: 20px;
     border-radius: 10px;
+    margin: 10px 10px;
+}
+
+.bl1-box1 h4 {}
+
+.bl1-box1 h5 {
+    padding: 13px 0px;
+}
+
+.bl1-box1 button {
+    padding: 7px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.bl1-foot {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    padding: 20px;
+}
+
+.bl1-foot h6 {
+    font-weight: normal;
+    margin: 0;
+}
+
+.bl1-foot h5 {
+    font-weight: bold;
+    grid-column: 1 / -1;
+    /* makes it span full width (last row) */
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.lang {
+    margin-left: 20px;
+    display: flex;
+    border: 1px solid #b3b3b3;
+    border-radius: 15px;
+    width: 105px;
+    height: 30px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.lang:hover {
+    cursor: pointer;
+}
+
+.glob {
+    width: 20px;
+    text-align: center;
+}
+
+.eng-btn {
+    padding: 5px 5px;
+    background-color: #121212;
+    border-style: none;
+    color: white;
+    font-size: 15px;
+}
+
+
+
+
+/* Right Block Start */
+.right-block {
+    background-color: #121212;
+    width: 70vw;
+    border-radius: 10px;
+    height: 100vh;
+    overflow-y: auto;
+    /* Only right side scrolls */
+}
+.bl2-top{
+margin-top: 20px;
+margin-left: 50px;
 }
 
 .first-line,
@@ -113,7 +248,25 @@ body {
 .third-line,
 .four-line {
     display: flex;
+    margin: 20px 40px;
+}
 
+.card{
+    
+    padding-bottom: 40px;
+    padding-left: 18px;
+    padding-top: 10px;
+    border-radius: 20px;
+    
+}
+.card img{
+    border-radius: 10px;
+    
+}
+.card:hover{
+    cursor: pointer;
+    background-color: #1f1f1f;
+    
 }
 
 .first-line img,
@@ -121,12 +274,13 @@ body {
 .third-line img,
 .four-line img {
     width: 10vw;
-
+    
 }
 
 .second-line img {
     border-radius: 100%;
     width: 10vw;
+    margin: 20px 40px;
 }
 
 .bl2-foot {
