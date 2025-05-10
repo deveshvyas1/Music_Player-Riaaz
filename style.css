@@ -193,7 +193,11 @@ body {
 }
 
 
-.songList {}
+.songList {
+    height: 644px;
+    overflow: auto;
+    margin: 34px 0;
+}
 
 .songList ul {
     padding-left: 0px;
@@ -203,12 +207,18 @@ body {
 .songList ul li {
     list-style: decimal;
     display: flex;
-    gap: 34px;
+    gap: 10px;
     cursor: pointer;
     padding: 12px 10px;
     border: 1px solid rgb(93, 88, 88);
     margin: 12px 0;
     border-radius: 5px;
+    justify-content: space-between;
+}
+
+.songList .info{
+    font-size: 13px;
+    width: 344px;
 }
 
 .playnow {
