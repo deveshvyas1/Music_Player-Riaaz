@@ -194,9 +194,9 @@ body {
 
 
 .songList {
-    height: 644px;
+    height: 544px;
     overflow: auto;
-    margin: 34px 0;
+    margin-bottom: 34px;
 }
 
 .songList ul {
@@ -448,7 +448,7 @@ h6 {
     /* Center horizontally */
     transform: translateX(-50%);
     /* Adjust position to true center */
-    width: 50%;
+    width: 50vw;
     background-color: #1f1f1f;
     color: white;
     margin: 30px;
@@ -472,4 +472,26 @@ h6 {
 .next {
     padding: 10px;
     width: 50px;
+}
+
+.seekbar{
+    height: 4px;
+    background-color: rgb(202, 198, 198);
+    border-radius: 10px;
+    width: 100%;
+    /* position: absolute; */
+    bottom: 0;
+    margin-top: 10px;
+}
+
+.pointer{
+    width: 15px;
+    height: 14px;
+    background-color: white;
+    border-radius: 13px;
+    position: relative;
+    bottom: 6px;
+    left: 0%;
+    transition: left 0.5s;
+
 }

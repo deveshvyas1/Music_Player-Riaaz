@@ -22,6 +22,7 @@ async function main() {
     let songs = await getSongs()
     console.log(songs);
 
+    // Show all the songs in the Playlist
     let songUL = document.querySelector(".songList").getElementsByTagName("ul")[0]
     for (const song of songs){
         songUL.innerHTML = songUL.innerHTML + `<li> 
@@ -34,14 +35,12 @@ async function main() {
                         <div class="playnow">
                             <span>Play Now</span>
                             <img src="img/icons/play.svg" alt="">
-                        </div>
-                    
-         </li>`;
+                        </div> </li>`;
     }
 
-    // play the first song
-    var audio = new Audio(songs[1])
-    // audio.play();
+    // // play the first song
+    // var audio = new Audio(songs[1])
+    // // audio.play();
 }
 
 main()
