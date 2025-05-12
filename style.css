@@ -462,6 +462,7 @@ h6 {
     padding-bottom: 200px;
     padding-top: 0px;
     padding-left: 0px;
+    margin-left: 50px;
 
 }
 
@@ -482,18 +483,30 @@ h6 {
     opacity: 90%;
     border-radius: 20px;
 }
+.icons{
+    
+}
 
-.previous {
+.abovebar{
+    display: flex;
+    justify-content: space-between;
+}
+.songinfo, .songtime{
+    padding: 0 12px;    
+}
+#previous {
     padding: 10px;
     width: 50px;
 }
 
-.play {
-    padding: 10px;
-    width: 50px;
+#play {
+    /* padding: 10px; */
+    width: 40px;
+    margin: 5px;
+    cursor: pointer;
 }
 
-.next {
+#next {
     padding: 10px;
     width: 50px;
 }

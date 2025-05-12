@@ -1,9 +1,24 @@
 // console.log('Let Start JS');
 let currentSong = new Audio();
 
+    function secondToMinutesSeconds(seconds){
+        if (isNaN(seconds) || seconds <0){
+            return "00:00";
+        }
+        const minutes = Math.floor(seconds / 60);
+        const remainingSeconds = Math.floor(seconds % 60);
+
+        const formattedMinutes = String(minutes).padStart(2, '0');
+        const formattedSeconds = String(remainingSeconds).padStart(2,'0');
+
+        return `${formattedMinutes}:${formattedSeconds}`;
+    }
+
 async function getSongs() {
 
-    let a = await fetch("songs/")
+
+    let a = await fetch("http://192.168.1.9:3000/songs/")
+
     let response = await a.text();
     // console.log(response);
     let div = document.createElement("div")
@@ -23,6 +38,9 @@ const playMusic = (track)=> {
     // let audio = new Audio("/songs/"+ track)
     currentSong.src = "/songs/" + track
     currentSong.play()
+    play.src = "pause.svg"
+    document.querySelector(".songinfo").innerHTML = track
+    document.querySelector(".songtime").innerHTML = "00:00 / 00:00"
 }
 
 async function main() {
@@ -54,6 +72,25 @@ async function main() {
             // console.log(e.querySelector(".info").firstElementChild.innerHTML);
             playMusic(e.querySelector(".info").firstElementChild.innerHTML.trim())
         })
+    })
+
+    // Attach an event listener to play and previous
+    play.addEventListener("click", ()=> {
+        if (currentSong.paused){
+            currentSong.play()
+            play.src = "pause.svg"
+        }
+        else{
+            currentSong.pause()
+            play.src = "play.svg"
+        }
+    })
+
+    // listen for timeupdate event 
+    currentSong.addEventListener("timeupdate",()=>{
+        // console.log(currentSong.currentTime, currentSong.duration);
+        document.querySelector(".songtime").innerHTML = `${secondToMinutesSeconds(currentSong.currentTime)}/${secondToMinutesSeconds(currentSong.duration)}`
+        
     })
     
     
