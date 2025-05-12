@@ -1,8 +1,9 @@
-console.log('Let Start JS');
+// console.log('Let Start JS');
+let currentSong = new Audio();
 
 async function getSongs() {
 
-    let a = await fetch("http://192.168.1.5:3000/songs/")
+    let a = await fetch("http://192.168.1.9:3000/songs/")
     let response = await a.text();
     // console.log(response);
     let div = document.createElement("div")
@@ -18,9 +19,18 @@ async function getSongs() {
     return songs
 }
 
+const playMusic = (track)=> {
+    // let audio = new Audio("/songs/"+ track)
+    currentSong.src = "/songs/" + track
+    currentSong.play()
+}
+
 async function main() {
+
+    
+    // Get the list of all the songs
     let songs = await getSongs()
-    console.log(songs);
+    // console.log(songs);
 
     // Show all the songs in the Playlist
     let songUL = document.querySelector(".songList").getElementsByTagName("ul")[0]
@@ -38,9 +48,15 @@ async function main() {
                         </div> </li>`;
     }
 
-    // // play the first song
-    // var audio = new Audio(songs[1])
-    // // audio.play();
+    // Attach an event listener to each song
+    Array.from(document.querySelector(".songList").getElementsByTagName("li")).forEach(e=> {
+        e.addEventListener("click", element =>{
+            // console.log(e.querySelector(".info").firstElementChild.innerHTML);
+            playMusic(e.querySelector(".info").firstElementChild.innerHTML.trim())
+        })
+    })
+    
+    
 }
 
 main()
