@@ -353,6 +353,7 @@ body {
     overflow-y: auto;
     /* Only right side scrolls */
 
+
 }
 
 .bl2-top {
@@ -373,6 +374,9 @@ body {
     /* 5 equal columns */
     /* gap: 20px; */
     /* margin: 20px 40px; */
+}
+.second-line{
+    margin-bottom: 200px;
 }
 
 .card {
@@ -471,11 +475,12 @@ body {
 .artist {
     border-radius: 10px;
     align-items: center;
+    transition: all 0.9s;
 }
 
 .artist:hover {
     cursor: pointer;
-    background-color: #1f1f1f;
+    background-color: #535050;
 
 }
 
@@ -538,12 +543,6 @@ body {
     justify-content: space-between;
 }
 
-.songinfo,
-.songtime {
-    padding: 0 12px;
-    width: 300px;
-}
-
 #previous {
     padding: 10px;
     width: 50px;
@@ -584,14 +583,42 @@ body {
 
 }
 
+.timevol{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 13px;
+}
+.songinfo{
+    min-width: 250px;
+}
+
+.songtime{
+    width: 120px;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+.range{
+
+}
+.volume{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
 /* make side responsive  */
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
 
     .first-line,
     .second-line,
     .third-line,
     .four-line {
-        display: flex;
+        display: grid;
+        grid-template-columns: auto auto auto;
         flex-direction: column;
         align-items: center;
         padding: 0 10px;
@@ -657,11 +684,15 @@ body {
         gap: 10px;
     }
 
-    .songinfo,
-    .songtime {
-        width: 100%;
-        text-align: center;
+    .songinfo {
+        text-align: center; */
+        padding: 0 12px;
+        min-width: 350px;
     }
+    .songtime{
+        min-width: 210px;
+    }
+    .
 
     .songbuttons {
         margin-top: 10px;
@@ -708,31 +739,39 @@ body {
     }
 
     .card {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    padding: 15px;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background-color: #1a1a1a; /* Optional: for better contrast */
-    border-radius: 12px;
-    min-height: 220px; /* Add this for taller look */
-}
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 15px;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background-color: #1a1a1a;
+        /* Optional: for better contrast */
+        border-radius: 12px;
+        min-height: 220px;
+        /* Add this for taller look */
+    }
 
-.card img {
-    width: 80%;
-    max-width: 150px;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 0px;
-}
+    .card img {
+        width: 80%;
+        max-width: 150px;
+        height: auto;
+        border-radius: 10px;
+        margin-bottom: 0px;
+    }
 
-.card h4, .card h6 {
-    margin: 5px 0;
-    padding: 0 5px;
-    word-break: break-word; /* Helps for long names */
+    .card h4,
+    .card h6 {
+        margin: 5px 0;
+        padding: 0 5px;
+        word-break: break-word;
+        /* Helps for long names */
+    }
+
+    .timevol{
+    display: block;
 }
-} 
+}

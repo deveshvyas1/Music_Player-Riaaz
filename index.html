@@ -78,11 +78,13 @@
 
         <div class="right-block">
 
-            <div class="bl2-top">
+            <!-- <div class="bl2-top">
                 <h2>Trending songs</h2>
-            </div>
+            </div> -->
 
-            <div class="first-line">
+
+
+            <!-- <div class="first-line">
 
                 <div class="card">
                     <img src="img/music/piya ghar.jpeg" alt="piya ghar ">
@@ -109,34 +111,34 @@
                     <h4>Chaudhary</h4>
                     <h6>Mame Khan, Amit Trivedi</h6>
                 </div>
-            </div>
+            </div> -->
 
-            <h2 class="bl2-top">Popular artists</h2>
+            <h2 class="bl2-top">Popular Playlist</h2>
             <div class="second-line">
-                <div class="artist">
+                <div data-folder="ncs" class="artist">
+                    <img src="img/artist/allplaylist.png" alt="">
+                    <h4>All Songs</h4>
+                    <h6>All Artist</h6>
+                </div>
+                <div data-folder="javed" class="artist">
                     <img src="img/artist/javed.jpg" alt="Javed Bashir">
                     <h4>Javed Bashir</h4>
                     <h6>Artist</h6>
                 </div>
-                <div class="artist">
+                <div data-folder="kailash" class="artist">
                     <img src="img/artist/kelash.png" alt="">
                     <h4>Kailash Kher</h4>
                     <h6>Artist</h6>
                 </div>
-                <div class="artist">
+                <div data-folder="arjit" class="artist">
                     <img src="img/artist/arjit.png" alt="">
                     <h4>Arjit Singh</h4>
-                    <h6>Artist</h6>
-                </div>
-                <div class="artist">
-                    <img src="img/artist/pritam.jpeg" alt="">
-                    <h4>Pritam</h4>
                     <h6>Artist</h6>
                 </div>
 
             </div>
 
-            <h2 class="bl2-top">Popular albums and singles</h2>
+            <!-- <h2 class="bl2-top">Popular albums and singles</h2>
             <div class="third-line">
                 <div class="card">
                     <img src="img/music/piya ghar.jpeg" alt="piya ghar ">
@@ -192,7 +194,7 @@
                     <h4>Chaudhary</h4>
                     <h6>Mame Khan, Amit Trivedi</h6>
                 </div>
-            </div>
+            </div> -->
 
             <div class="bl2-foot">
                 <div class="row">
@@ -258,9 +260,19 @@
                     <img id="play" src="img/icons/play.svg" alt="">
                     <img id="next" src="img/icons/next.svg" alt="">
                 </div>
-                <div class="songtime">
 
+                <div class="timevol">
+                    <div class="songtime">
+
+                    </div>
+                    <div class="volume">
+                        <img width="25" src="img/icons/volume.svg" alt="volume-icon">
+                        <div class="range">
+                            <input type="range" name ="volume">
+                        </div>
+                    </div>
                 </div>
+
             </div>
 
             <div class="seekbar">
