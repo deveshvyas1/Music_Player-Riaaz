@@ -546,6 +546,7 @@ body {
 #previous {
     padding: 10px;
     width: 50px;
+    cursor: pointer;
 }
 
 #play {
@@ -558,7 +559,9 @@ body {
 #next {
     padding: 10px;
     width: 50px;
+    cursor: pointer;
 }
+
 
 .seekbar {
     height: 4px;
@@ -600,14 +603,15 @@ body {
     justify-content: center;
     padding: 5px;
 }
-.range{
-
+.range input{
+    cursor: pointer;
 }
 .volume{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 12px;
+    cursor: pointer;
 }
 
 /* make side responsive  */

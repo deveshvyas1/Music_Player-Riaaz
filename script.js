@@ -55,6 +55,7 @@ async function getSongs(folder) {
         })
     })
     // return songs
+    // return songs;
 }
 
 const playMusic = (track, pause = false) => {
@@ -73,16 +74,33 @@ async function displayAlbums() {
     let div = document.createElement("div")
     div.innerHTML = response;
     let anchors = div.getElementsByTagName("a")
-    Array.from(anchors).forEach(async e => {
+    let cardContainer = document.querySelector(".second-line")
+    let array = Array.from(anchors)
+    for (let index = 0; index < array.length; index++) {
+        const e = array[index];
         if (e.href.includes("/songs")) {
-            let folder = e.href.split("/").slice(-2)[0];
+            let folder = e.href.split("/").slice(-2)[0]
             // get the metadata of the folder
             let a = await fetch(`http://192.168.1.9:3000/songs/${folder}/info.json`)
             let response = await a.json();
             console.log(response);
-            
+            cardContainer.innerHTML = cardContainer.innerHTML + `<div data-folder="${folder}" class="artist">
+                <img src="/songs/${folder}/cover.png" alt="">
+                <h4>${response.title}</h4>
+                <h6>${response.Description}</h6>
+            </div>`;
+
         }
-    })
+    }
+
+    // Load the playlist whenever artist is clicked
+    Array.from(document.getElementsByClassName("artist")).forEach(e => {
+        e.addEventListener("click", async item => {
+            // let folder = item.currentTarget.dataset.folder;
+            songs = await getSongs(`songs/${item.currentTarget.dataset.folder}`)
+        });
+    });
+
 }
 
 async function main() {
@@ -151,14 +169,24 @@ async function main() {
             currentSong.volume = parseInt(e.target.value) / 100;
         })
 
-    // Load the playlist whenever artist is clicked
-    Array.from(document.getElementsByClassName("artist")).forEach(e => {
-        console.log(e);
-        e.addEventListener("click", async item => {
-            songs = await getSongs(`songs/${item.currentTarget.dataset.folder}`)
-        })
-
+    // add event to mute the track 
+    document.querySelector(".volume>img").addEventListener("click", e =>{
+        console.log(e.target);
+        if(e.target.src.includes ("img/icons/volume.svg")) {
+            console.log(e.target.src)
+            e.target.src = e.target.src.replace("img/icons/volume.svg", "img/icons/mute.svg")
+            currentSong.volume = 0;
+             document.querySelector(".range").getElementsByTagName("input")[0].value = 0;
+        }
+        else {
+            e.target.src = e.target.src.replace("img/icons/mute.svg", "img/icons/volume.svg")
+            currentSong.volume = .10;
+            document.querySelector(".range").getElementsByTagName("input")[0].value = 10;
+        }
+        
     })
+
+
 }
 
 main()
