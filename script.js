@@ -34,13 +34,13 @@ function secondToMinutesSeconds(seconds) {
 }
 
 async function getSongs() {
-    // Define the songs list directly since we know what songs are available
+    // Define the songs list with their new organized paths
     let songs = [
-        "Ae Dil Hai Mushkil .mp3",
-        "Chaudhary.mp3",
-        "O Rangrez.mp3",
-        "Piya Ghar Aavenge.mp3",
-        "Ye Tune Kya Kiya .mp3"
+        "arjit/Ae Dil Hai Mushkil .mp3",
+        "ncs/Chaudhary.mp3",
+        "ncs/O Rangrez.mp3", 
+        "kailash/Piya Ghar Aavenge.mp3",
+        "javed/Ye Tune Kya Kiya .mp3"
     ];
     return songs;
 }
@@ -51,7 +51,8 @@ const playMusic = (track, pause=false) => {
         currentSong.play();
         play.src = "img/icons/pause.svg";
     }
-    document.querySelector(".songinfo").innerHTML = decodeURI(track).replace('.mp3', '');
+    let songName = track.split('/')[1].replace('.mp3', '');
+    document.querySelector(".songinfo").innerHTML = decodeURI(songName);
     document.querySelector(".songtime").innerHTML = "00:00 / 00:00";
     
     // Update the current song index
@@ -72,13 +73,14 @@ async function main() {
     // Show all the songs in the Playlist
     let songUL = document.querySelector(".songList").getElementsByTagName("ul")[0]
     for (const song of songs) {
-        let displayName = song.replace('.mp3', '').replace(/%20/g, ' ');
+        let displayName = song.split('/')[1].replace('.mp3', '').replace(/%20/g, ' ');
+        let artistName = song.split('/')[0].charAt(0).toUpperCase() + song.split('/')[0].slice(1);
         songUL.innerHTML = songUL.innerHTML + `<li data-song="${song}"> 
        
                         <img src="img/icons/music.svg" alt="music">
                         <div class="info">
                             <div>${displayName}</div>
-                            <div>Devesh</div>
+                            <div>${artistName}</div>
                         </div>
                         <div class="playnow">
                             <span>Play Now</span>
