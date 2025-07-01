@@ -39,20 +39,15 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden;
     background-color: #000000;
     color: #ffffff;
     font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    font-optical-sizing: auto;
     font-weight: 300;
+    font-optical-sizing: auto;
     font-style: normal;
-    overflow-x: auto;
+    overflow-x: hidden; /* Prevent horizontal scroll */
     overflow-y: auto;
     min-height: 100%;
-    /* Instead of fixed 100% height */
-    overflow-x: hidden;
-    /* Only hide horizontal scroll */
 }
 
 
@@ -351,8 +346,8 @@ body {
     box-sizing: border-box;
     justify-content: center;
     overflow-y: auto;
-    /* Only right side scrolls */
-
+    overflow-x: hidden; /* Hide horizontal scroll */
+    padding: 0 10px; /* Add padding to prevent cutoff */
 }
 
 .bl2-top {
@@ -364,15 +359,13 @@ body {
 .second-line,
 .third-line,
 .four-line {
-    /* display: flex; */
-    /* margin: 20px 40px; */
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    justify-content: center;
-    align-items: center;
-    /* 5 equal columns */
-    /* gap: 20px; */
-    /* margin: 20px 40px; */
+    gap: 15px;
+    margin: 20px 15px;
+    padding: 0 10px;
+    justify-items: center; /* Center items within grid cells */
+    align-items: start;
 }
 
 .card {
@@ -401,13 +394,15 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 20px;
+    padding: 15px;
     background-color: transparent;
     transition: all 0.3s ease;
-    width: 200px;
+    width: 100%;
+    max-width: 180px; /* Limit max width to prevent overflow */
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 .card::before {
@@ -430,7 +425,7 @@ body {
 .card img {
     border-radius: 10px;
     width: 100%;
-    height: 180px;
+    height: 140px; /* Slightly smaller to fit better */
     object-fit: cover;
     transition: transform 0.3s ease;
     position: relative;
@@ -442,24 +437,27 @@ body {
 }
 
 .card h4 {
-    margin: 10px 0 5px;
-    height: 40px;
+    margin: 8px 0 4px;
+    height: auto; /* Allow auto height */
     overflow: hidden;
     text-overflow: ellipsis;
     position: relative;
     z-index: 1;
     transition: color 0.3s ease;
+    font-size: 14px;
+    line-height: 1.2;
 }
 
 .card h6 {
     margin: 0;
-    height: 30px;
+    height: auto; /* Allow auto height */
     font-weight: normal;
-    font-size: 14px;
+    font-size: 12px;
     color: #aaa;
     position: relative;
     z-index: 1;
     transition: color 0.3s ease;
+    line-height: 1.2;
 }
 
 .card:hover {
@@ -479,10 +477,11 @@ body {
 
 .artist img {
     border-radius: 100%;
-    width: 180px;
-    height: 180px;
+    width: 140px;
+    height: 140px;
     object-fit: cover;
-    margin: 20px 40px;
+    margin: 10px auto;
+    display: block;
     transition: transform 0.3s ease;
 }
 
@@ -493,6 +492,9 @@ body {
     transition: all 0.3s ease;
     cursor: pointer;
     text-align: center;
+    width: 100%;
+    max-width: 160px;
+    margin: 0 auto;
 }
 
 .artist:hover {
@@ -527,10 +529,10 @@ body {
 
 .second-line img {
     border-radius: 100%;
-    width: 180px;
-    height: 180px;
+    width: 140px;
+    height: 140px;
     object-fit: cover;
-    margin: 20px auto;
+    margin: 10px auto;
     display: block;
 }
 
@@ -576,7 +578,7 @@ body {
     width: 70vw;
     max-width: 1200px;
     min-width: 320px;
-    background: linear-gradient(135deg, #1f1f1f 0%, #2a2a2a 100%);
+    background: linear-gradient(135deg, rgba(31, 31, 31, 0.8) 0%, rgba(42, 42, 42, 0.8) 100%);
     color: white;
     padding: 25px 30px;
     text-align: center;
@@ -593,19 +595,50 @@ body {
     align-items: center;
     margin-bottom: 15px;
     gap: 20px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    position: relative;
+}
+
+.left-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 150px;
+    max-width: 200px;
+    flex-shrink: 0;
+    justify-content: center;
+}
+
+.center-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    z-index: 2;
+}
+
+.right-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    min-width: 120px;
+    flex-shrink: 0;
+    gap: 8px;
+    justify-content: center;
 }
 
 .songinfo {
-    flex: 1;
     text-align: left;
     font-weight: 500;
     font-size: 15px;
     color: #ffffff;
-    min-width: 150px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    width: 100%;
+    margin: 0;
+    line-height: 1.4;
 }
 
 .songbuttons {
@@ -614,6 +647,9 @@ body {
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    z-index: 2;
+    margin: 0;
+    line-height: 1;
 }
 
 .songbuttons img {
@@ -627,13 +663,25 @@ body {
     filter: brightness(1.2);
 }
 
-.songtime {
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-end;
     min-width: 120px;
+    margin: 0;
+}
+
+.songtime {
     text-align: right;
     font-size: 13px;
     color: #b3b3b3;
-    flex-shrink: 0;
+    width: 100%;
+    margin: 0;
+    line-height: 1.4;
 }
+
+
 
 .seekbar {
     height: 5px;
@@ -774,6 +822,7 @@ body {
     
     .right-block {
         width: 70vw;
+        padding: 0 15px;
     }
     
     .playbar {
@@ -787,8 +836,19 @@ body {
     .four-line {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
-        gap: 20px;
-        margin: 20px 40px;
+        gap: 12px;
+        margin: 20px 10px;
+        padding: 0;
+        justify-items: center;
+    }
+    
+    .card {
+        max-width: 160px;
+        padding: 12px;
+    }
+    
+    .card img {
+        height: 140px;
     }
 }
 
@@ -800,11 +860,12 @@ body {
     }
     
     .left-block {
-        width: 35vw;
+        width: 32vw;
     }
     
     .right-block {
-        width: 65vw;
+        width: 68vw;
+        padding: 0 10px;
     }
     
     .playbar {
@@ -817,18 +878,21 @@ body {
     .third-line,
     .four-line {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 15px;
-        margin: 15px 30px;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+        margin: 15px 5px;
+        padding: 0;
+        justify-items: center;
     }
     
     .card {
         width: 100%;
-        padding: 15px;
+        max-width: 140px;
+        padding: 10px;
     }
     
     .card img {
-        height: 160px;
+        height: 120px;
     }
 }
 
@@ -876,15 +940,27 @@ body {
     }
     
     .abovebar {
-        flex-direction: row;
         justify-content: space-between;
         gap: 15px;
+        position: relative;
+    }
+    
+    .left-section {
+        max-width: 140px;
     }
     
     .songinfo {
-        flex: 1;
-        text-align: left;
         font-size: 14px;
+    }
+
+    .songbuttons {
+        justify-content: center;
+        z-index: 2;
+    }
+
+    .right-section {
+        min-width: 100px;
+        gap: 6px;
     }
     
     .volume-control {
@@ -957,30 +1033,39 @@ body {
     
     .abovebar {
         flex-direction: column;
-        gap: 10px;
+        gap: 12px;
+        align-items: center;
+    }
+    
+    .left-section,
+    .center-section,
+    .right-section {
+        width: 100%;
+        align-items: center;
     }
     
     .songinfo {
-        order: 1;
         text-align: center;
         width: 100%;
+        max-width: none;
     }
     
     .songbuttons {
-        order: 2;
         justify-content: center;
     }
     
-    .songtime {
-        order: 3;
-        text-align: center;
-        width: 100%;
+    .right-section {
+        gap: 8px;
     }
     
     .volume-control {
-        order: 4;
         justify-content: center;
         min-width: 80px;
+    }
+    
+    .songtime {
+        text-align: center;
+        width: 100%;
     }
 }
 
@@ -1084,19 +1169,25 @@ body {
     
     .abovebar {
         flex-direction: column;
-        gap: 8px;
+        gap: 10px;
+        align-items: center;
+    }
+    
+    .left-section,
+    .center-section,
+    .right-section {
+        width: 100%;
         align-items: center;
     }
     
     .songinfo {
-        order: 1;
         text-align: center;
         width: 100%;
         font-size: 13px;
+        max-width: none;
     }
     
     .songbuttons {
-        order: 2;
         justify-content: center;
         gap: 12px;
     }
@@ -1106,18 +1197,20 @@ body {
         height: 35px;
     }
     
-    .songtime {
-        order: 3;
-        text-align: center;
-        width: 100%;
-        font-size: 11px;
+    .right-section {
+        gap: 6px;
     }
     
     .volume-control {
-        order: 4;
         justify-content: center;
         min-width: 70px;
         gap: 8px;
+    }
+    
+    .songtime {
+        text-align: center;
+        width: 100%;
+        font-size: 11px;
     }
     
     .volume-slider {
