@@ -97,6 +97,36 @@ async function main() {
         })
     })
 
+    // Add click functionality to trending songs cards
+    const trendingCards = document.querySelectorAll(".first-line .card");
+    const popularAlbumCards = document.querySelectorAll(".third-line .card");
+    const indiaBestCards = document.querySelectorAll(".four-line .card");
+    
+    const songMapping = {
+        "Piya Ghar Aavenge": "kailash/Piya Ghar Aavenge.mp3",
+        "Phir Bhi Tumko Chaahunga": "arjit/Ae Dil Hai Mushkil .mp3", // Using available song
+        "Ae Dil Hai Mushkil": "arjit/Ae Dil Hai Mushkil .mp3",
+        "Ye Tune Kya Kiya": "javed/Ye Tune Kya Kiya .mp3",
+        "Chaudhary": "ncs/Chaudhary.mp3"
+    };
+
+    // Add functionality to all card sections
+    const allCards = [...trendingCards, ...popularAlbumCards, ...indiaBestCards];
+    
+    allCards.forEach(card => {
+        card.addEventListener("click", () => {
+            const songTitle = card.querySelector("h4").textContent.trim();
+            const songFile = songMapping[songTitle];
+            if (songFile) {
+                console.log("Playing song:", songTitle);
+                playMusic(songFile);
+            }
+        });
+        
+        // Add hover effect
+        card.style.cursor = "pointer";
+    });
+
     // Attach an event listener to play and previous
     play.addEventListener("click", () => {
         if (currentSong.paused) {
