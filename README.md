@@ -2,16 +2,40 @@
 
 A Spotify-like music player built with HTML, CSS, and JavaScript.
 
-Site - https://riyaaz.netlify.app/
+**🚀 Live Demo**: [https://riyaaz.netlify.app/](https://riyaaz.netlify.app/)
+**📦 GitHub**: [https://github.com/deveshvyas1/Music_Player-Riaaz](https://github.com/deveshvyas1/Music_Player-Riaaz)
 
-## Features
+## ✨ Features
 
-- ✨ Modern Spotify-inspired UI
-- 🎵 Play/Pause music controls
-- ⏭️ Next/Previous track navigation
-- 🎚️ Interactive seek bar
-- 📱 Responsive sidebar navigation
-- 🎨 Beautiful album artwork display
+- 🎵 **Music Playback**: Play/Pause with full audio controls
+- ⏭️ **Navigation**: Next/Previous track with seamless transitions  
+- 🎚️ **Volume Control**: Interactive slider with mute/unmute functionality
+- 🔊 **Dynamic Icons**: Volume icons change based on level (high/low/mute)
+- 📱 **Responsive Design**: Works perfectly on desktop and mobile
+- 🎨 **Modern UI**: Spotify-inspired dark theme with smooth animations
+- 🎯 **Interactive Seek Bar**: Click to jump to any part of the song
+- 📁 **Organized Library**: Songs organized by artist folders
+- 🎼 **Song Info Display**: Shows current song and time progress
+
+## 🚀 Deployment
+
+### GitHub Repository
+Your project is now live on GitHub at: `https://github.com/deveshvyas1/Music_Player-Riaaz`
+
+### Deploy to Netlify (Easy Method)
+1. **Visit Netlify**: Go to [netlify.com](https://netlify.com) and sign up/login
+2. **Connect GitHub**: Click "New site from Git" → "GitHub" 
+3. **Select Repository**: Choose `deveshvyas1/Music_Player-Riaaz`
+4. **Deploy Settings**:
+   - Build command: `(leave empty)`
+   - Publish directory: `(leave empty or put ".")`
+5. **Deploy**: Click "Deploy site"
+6. **Custom Domain** (optional): Change the random domain to something like `riyaaz-music-player.netlify.app`
+
+### Alternative Deployment Options
+- **Vercel**: Import from GitHub at [vercel.com](https://vercel.com)
+- **GitHub Pages**: Enable in repository Settings → Pages
+- **Firebase Hosting**: Use `firebase deploy` after setup
 
 ## How to Run
 
